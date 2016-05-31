@@ -16,6 +16,7 @@ public class BadgeUtil {
     private static final String TAG = BadgeUtil.class.getSimpleName();
     private static List<Integer> notifyIdList = new ArrayList<>();
     private static Badger badger;
+    private static String stashPackageName;
 
     /**
      * @param notification    更新角标一般都是和发送notification并行的。如果不想发notification只是更新角标，这里传null
@@ -34,9 +35,10 @@ public class BadgeUtil {
         String currentHomePackage = getLauncherName(context);
 
         Log.d(TAG, "currentHomePackage:" + currentHomePackage);
-        if (badger == null)
+        if (stashPackageName==null||!stashPackageName.equals(currentHomePackage))
             badger = BadgerType.getBadgerByLauncherName(currentHomePackage);
         badger.executeBadge(context, notification, notifyID, thisNotifyCount, count);
+        stashPackageName = currentHomePackage;
     }
 
 
