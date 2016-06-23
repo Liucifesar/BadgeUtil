@@ -3,16 +3,10 @@ package com.leethink.badgerdemo;
 import android.app.Notification;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.leethink.badger.BadgeUtil;
@@ -49,10 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     //点击set 后，app退到桌面等待3s看效果（有的launcher当app在前台设置未读数量无效）
                     final Notification notification = mBuilder.build();
+                    //要传递不同的notifyId才
                     new Handler(getMainLooper()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            BadgeUtil.sendBadgeNotification(notification, NOTIFY_ID, getApplicationContext(), count, count);
+                            BadgeUtil.sendBadgeNotification(notification, (int) System.currentTimeMillis(), getApplicationContext(), count, count);
                             Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
                         }
                     }, 3 * 1000);
