@@ -3,15 +3,15 @@ Android 不同Launcher添加桌面角标Util
 
 * Android桌面角标的适配确实是非常坑爹的需求。原生系统根本就没有这个功能，国内很多厂家效仿ios都自己定义了该功能。Android程序员就很苦逼，要适配很多机型。建议万不得已情况下还是不要进行这项工作。
 其实这个功能和手机厂家没有直接的关系，而是和手机当前使用的launcher有直接关系。比如三星的手机我安装Asus桌面，这时候我们就不能适配三星launcher而要去适配华硕launcher。
-* 在开发中主要参考了[ShortcutBadger](https://github.com/leolin310148/ShortcutBadger "ShortcutBadger")，[Badge分析&如何逼死处女座](http://www.jianshu.com/p/0992ff9eeeb6 "Badge分析&如何逼死处女座")
+* 在开发中主要参考了[ShortcutBadger](https://github.com/leolin310148/ShortcutBadger "ShortcutBadger")，[Badge分析&如何逼死处女座](http://www.jianshu.com/p/0992ff9eeeb6 "Badge分析&如何逼死处女座")，[Badgs](https://github.com/arturogutierrez/Badges "Badges")
 * 在开发中问题总结
  * nova launcher 的免费版本是没有桌面角标的功能,nova launcher prime版本才有(需要收费且国内各大应用市场没有提供下载)。
  * apex launcher 也是需要收费。
  * adw launcher 是免费的功能正常，但是ui太难看。
  * asus launcher 是免费的功能正常，但是发现如果连续发送未读消息，角标显示有延迟。
- * htc launcher 没有机器没测试
- * sony launcher 没有机器没有测试
- * LG launcher 没有机器没有测试
+ * htc launcher 功能正常。
+ * sony launcher 功能正常。
+ * LG launcher   功能正常。
  * 小米/三星/asus/adw亲测可以正常使用
  * meizu 目前不支持(在Flyme4.5测试微信)
  * 联想 VIBE ui目前不支持(在VIBE UIV3.1测试微信)
